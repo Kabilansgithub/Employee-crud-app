@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: Employee-CRUD-App
+    env: php
+    buildCommand: "composer install && php artisan migrate --force && php artisan db:seed"
+    startCommand: "php artisan serve --host 0.0.0.0 --port 10000"
+    plan: free
+    envVars:
+      - key: APP_ENV
+        value: local
+      - key: APP_KEY
+        value: 5lwWk+2ujEZMXZ9pPtv+Z14Io54meLYXp7R7Q8uAwd0=
+      - key: DB_CONNECTION
+        value: "mysql"
+      - key: DB_HOST
+        value: "127.0.0.1"
+      - key: DB_DATABASE
+        value: "example_app"
+      - key: DB_USERNAME
+        value: "root"
+      - key: DB_PASSWORD
+        value:""
